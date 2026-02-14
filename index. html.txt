@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Seni Çok Seviyorum ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to bottom, #ff69b4, #ff1493);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+    h1 {
+      margin-top: 20%;
+      font-size: 4em;
+      text-shadow: 0 0 20px #fff;
+      animation: pulse 2s infinite;
+    }
+    .heart {
+      position: absolute;
+      font-size: 2em;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100vh) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Seni Seviyorum ❤️</h1>
+  
+  <script>
+    const messages = [];
+    const text = "Seni Seviyorum";
+    for(let i = 0; i < 200; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️ " + text + (i % 5 === 0 ? "!" : ""); // her 5'te bir ünlem
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 5 + 5) + "s"; // 5-10 sn arası düşme
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
